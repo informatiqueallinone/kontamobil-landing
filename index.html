@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Konta Mobil — Jere biznis ou fasil</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-icon">
+          <img src="images/Logo_Konta.png" class ="logo" alt="Logo_Konta_Mobil">
+      </div>
+      <span class="nav-logo-text">KONTA MOBIL</span>
+    </a>
+    <div class="nav-links">
+      <a href="#features" data-fr="Fonctionnalités" data-ht="Fonksyon yo">Fonctionnalités</a>
+      <a href="#pricing" data-fr="Tarifs" data-ht="Pri yo">Tarifs</a>
+      <a href="#testimonials" data-fr="Témoignages" data-ht="Temwayaj">Témoignages</a>
+      <a href="#faq" data-fr="FAQ" data-ht="FAQ">FAQ</a>
+      <a href="#contact" data-fr="Contact" data-ht="Kontakte">Contact</a>
+    </div>
+    <div class="nav-actions">
+      <button class="lang-btn" onclick="toggleLang()">🇭🇹 Kreyòl</button>
+      <button class="theme-btn" onclick="toggleTheme()" title="Mode clair/sombre">🌙</button>
+      <a href="#pricing" class="nav-cta" data-fr="Commencer" data-ht="Kòmanse">Commencer</a>
+      <button class="hamburger" onclick="toggleMenu()">☰</button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+  <a href="#features" onclick="toggleMenu()">Fonctionnalités</a>
+  <a href="#pricing" onclick="toggleMenu()">Tarifs</a>
+  <a href="#testimonials" onclick="toggleMenu()">Témoignages</a>
+  <a href="#faq" onclick="toggleMenu()">FAQ</a>
+  <a href="#contact" onclick="toggleMenu()">Contact</a>
+  <button class="lang-btn" id="mobile-lang-btn" onclick="toggleLang()" style="width:100%;justify-content:center;margin-top:8px">🇭🇹 Kreyòl</button>
+</div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-badge">✨ <span data-fr="Application #1 pour PME haïtiennes" data-ht="Aplikasyon #1 pou PME ayisyèn">Application #1 pour PME haïtiennes</span></div>
+        <h1 class="display hero-title">
+          <span class="line1" data-fr="Gérez votre" data-ht="Jere">Gérez votre</span><br>
+          <span class="line2" data-fr="commerce facilement" data-ht="biznis ou fasil">commerce facilement</span>
+        </h1>
+        <p class="hero-sub">
+          <span data-fr="Factures, stock, dépenses, retours — tout en un. Conçu pour les commerçants haïtiens, disponible partout." data-ht="Fakti, stòk, depans, retou — tout an yon sèl. Fèt pou komèsan ayisyèn, disponib toupatou.">
+            Factures, stock, dépenses, retours — tout en un. Conçu pour les commerçants haïtiens, disponible partout.
+          </span>
+        </p>
+        <div class="hero-actions">
+          <a href="#pricing" class="btn btn-gold" data-fr="Commencer gratuitement" data-ht="Kòmanse gratis">Commencer gratuitement</a>
+          <a href="#features" class="btn btn-outline" data-fr="Voir les fonctionnalités" data-ht="Wè fonksyon yo">Voir les fonctionnalités</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-num">7</div>
+            <div class="stat-label" data-fr="Jours gratuits" data-ht="Jou gratis">Jours gratuits</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">3</div>
+            <div class="stat-label" data-fr="Plans disponibles" data-ht="Plan disponib">Plans disponibles</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-num">HTG</div>
+            <div class="stat-label" data-fr="Paiement local" data-ht="Pèman lokal">Paiement local</div>
+          </div>
+        </div>
+      </div>
+      <div class="phone-wrap">
+  <div class="phone">
+    <div class="phone-screen" style="padding:0; position:relative; overflow:hidden;">
+      
+      <!-- Notch -->
+      <div style="position:absolute; top:0; left:50%; transform:translateX(-50%); width:80px; height:5px; background:rgba(0,0,0,0.3); border-radius:0 0 6px 6px; z-index:10;"></div>
+      
+      <!-- Slideshow container -->
+      <div id="phoneSlider" style="display:flex; transition:transform 0.6s ease; height:100%; width:700%; will-change:transform;">
+        
+        <!-- Slide 1 -->
+        <div class="slide-item">
+          <img src="images/Dashboard.jpg" alt="Dashboard"/>
+        </div>
+        
+        <!-- Slide 2 -->
+        <div class="slide-item">
+          <img src="images/Clients.jpg" alt="Clients"/>
+        </div>
+        
+        <!-- Slide 3 -->
+        <div class="slide-item">
+          <img src="images/Vente.jpg" alt="Vente"/>
+        </div>
+        
+        <!-- Slide 4 -->
+        <div class="slide-item">
+          <img src="images/Stock.jpg" alt="Stock"/>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="slide-item">
+          <img src="images/stock-Avarie.jpg" alt="Stock_avarie"/>
+        </div>
+
+        <!-- Slide 6 -->
+        <div class="slide-item">
+          <img src="images/Profil.jpg" alt="Profil"/>
+        </div>
+
+        <!-- Slide 7 -->
+        <div class="slide-item">
+          <img src="images/Auth.jpg" alt="Auth"/>
+        </div>
+        
+      </div>
+      
+      <!-- Indicateurs -->
+      <div style="position:absolute; bottom:12px; left:50%; transform:translateX(-50%); display:flex; gap:6px; z-index:10;">
+        <div class="slide-dot active" onclick="goSlide(0)"></div>
+        <div class="slide-dot" onclick="goSlide(1)"></div>
+        <div class="slide-dot" onclick="goSlide(2)"></div>
+        <div class="slide-dot" onclick="goSlide(3)"></div>
+        <div class="slide-dot" onclick="goSlide(4)"></div>
+        <div class="slide-dot" onclick="goSlide(5)"></div>
+        <div class="slide-dot" onclick="goSlide(6)"></div>
+      </div>
+      
+    </div>
+    <div class="phone-glow"></div>
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEMS -->
+<section id="problems">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="eyebrow" data-fr="Le problème" data-ht="Pwoblèm nan">Le problème</div>
+      <h2 class="display-sm" data-fr="Fini les carnets et l'approximation" data-ht="Fini kaye ak apwoksimasyon">Fini les carnets et l'approximation</h2>
+    </div>
+    <div class="grid-3">
+      <div class="problem-card fade-in">
+        <div class="problem-icon" style="background:#EF444418;">📝</div>
+        <div>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:8px;" data-fr="Avant / Anvan">Avant / Anvan</p>
+          <p style="font-weight:700;margin-bottom:8px;" data-fr="Factures à la main, clients oubliés" data-ht="Fakti alamen, kliyan bliye">Factures à la main, clients oubliés</p>
+          <div class="arrow-badge">→ <span data-fr="Avec Konta Mobil" data-ht="Avèk Konta Mobil">Avec Konta Mobil</span></div>
+          <p style="font-size:13px;color:var(--muted);" data-fr="Facture professionnelle en 30 secondes, envoyée sur WhatsApp" data-ht="Fakti pwofesyonèl an 30 segond, voye sou WhatsApp">Facture professionnelle en 30 secondes, envoyée sur WhatsApp</p>
+        </div>
+      </div>
+      <div class="problem-card fade-in">
+        <div class="problem-icon" style="background:#F59E0B18;">📦</div>
+        <div>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:8px;" data-fr="Avant / Anvan">Avant / Anvan</p>
+          <p style="font-weight:700;margin-bottom:8px;" data-fr="Stock inconnu, pertes invisibles" data-ht="Stòk enkoni, pèt envizib">Stock inconnu, pertes invisibles</p>
+          <div class="arrow-badge">→ <span data-fr="Avec Konta Mobil" data-ht="Avèk Konta Mobil">Avec Konta Mobil</span></div>
+          <p style="font-size:13px;color:var(--muted);" data-fr="Stock en temps réel, alertes automatiques quand c'est bas" data-ht="Stòk an tan reyèl, alèt otomatik lè li ba">Stock en temps réel, alertes automatiques quand c'est bas</p>
+        </div>
+      </div>
+      <div class="problem-card fade-in">
+        <div class="problem-icon" style="background:#3B82F618;">💰</div>
+        <div>
+          <p style="font-size:13px;color:var(--muted);margin-bottom:8px;" data-fr="Avant / Anvan">Avant / Anvan</p>
+          <p style="font-weight:700;margin-bottom:8px;" data-fr="Profits inconnus à la fin du mois" data-ht="Pwofi enkoni nan fen mwa">Profits inconnus à la fin du mois</p>
+          <div class="arrow-badge">→ <span data-fr="Avec Konta Mobil" data-ht="Avèk Konta Mobil">Avec Konta Mobil</span></div>
+          <p style="font-size:13px;color:var(--muted);" data-fr="Rapports PDF automatiques, profit net calculé en temps réel" data-ht="Rapò PDF otomatik, pwofi nèt kalkile an tan reyèl">Rapports PDF automatiques, profit net calculé en temps réel</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="eyebrow" data-fr="Fonctionnalités" data-ht="Fonksyon yo">Fonctionnalités</div>
+      <h2 class="display-sm" data-fr="Tout ce dont votre commerce a besoin" data-ht="Tout sa biznis ou bezwen">Tout ce dont votre commerce a besoin</h2>
+      <p data-fr="Une seule app remplace le carnet, la calculatrice et le tableur." data-ht="Yon sèl aplikasyon ranplase kaye, kalkitatris ak tablo.">Une seule app remplace le carnet, la calculatrice et le tableur.</p>
+    </div>
+    <div class="grid-3" style="gap:20px;">
+      <div class="feature-card fade-in">
+        <span class="feature-icon">🧾</span>
+        <div class="feature-title" data-fr="Ventes & Factures" data-ht="Vant & Fakti">Ventes & Factures</div>
+        <p class="feature-desc" data-fr="Créez des factures professionnelles en 30 secondes. Paiements partiels, WhatsApp, PDF." data-ht="Kreye fakti pwofesyonèl an 30 segond. Pèman pasyèl, WhatsApp, PDF.">Créez des factures professionnelles en 30 secondes. Paiements partiels, WhatsApp, PDF.</p>
+      </div>
+      <div class="feature-card fade-in">
+        <span class="feature-icon">📦</span>
+        <div class="feature-title" data-fr="Gestion de Stock" data-ht="Jesyon Stòk">Gestion de Stock</div>
+        <p class="feature-desc" data-fr="Stock en temps réel, alertes de stock bas, stock avarié séparé." data-ht="Stòk an tan reyèl, alèt stòk ba, stòk avaryé apa.">Stock en temps réel, alertes de stock bas, stock avarié séparé.</p>
+      </div>
+      <div class="feature-card fade-in">
+        <span class="feature-icon">💸</span>
+        <div class="feature-title" data-fr="Gestion des Dépenses" data-ht="Jesyon Depans">Gestion des Dépenses</div>
+        <p class="feature-desc" data-fr="Enregistrez toutes vos dépenses par catégorie. Voir l'impact sur votre profit." data-ht="Anrejistre tout depans ou pa kategori. Wè enpak sou pwofi ou.">Enregistrez toutes vos dépenses par catégorie. Voir l'impact sur votre profit.</p>
+      </div>
+      <div class="feature-card fade-in">
+        <span class="feature-icon">🔄</span>
+        <div class="feature-title" data-fr="Retours & Remboursements" data-ht="Retou & Ranbousman">Retours & Remboursements</div>
+        <p class="feature-desc" data-fr="Gérez les retours de marchandises, remboursements et avoirs clients automatiquement." data-ht="Jere retou machandiz, ranbousman ak kredi kliyan otomatikman.">Gérez les retours de marchandises, remboursements et avoirs clients automatiquement.</p>
+      </div>
+      <div class="feature-card fade-in">
+        <span class="feature-icon">📊</span>
+        <div class="feature-title" data-fr="Rapports & Graphiques" data-ht="Rapò & Grafik">Rapports & Graphiques</div>
+        <p class="feature-desc" data-fr="Rapport mensuel PDF automatique, graphiques ventes/dépenses/profit." data-ht="Rapò mansyèl PDF otomatik, grafik vant/depans/pwofi.">Rapport mensuel PDF automatique, graphiques ventes/dépenses/profit.</p>
+      </div>
+      <div class="feature-card fade-in">
+        <span class="feature-icon">👥</span>
+        <div class="feature-title" data-fr="Multi-utilisateurs" data-ht="Plizyè itilizatè">Multi-utilisateurs</div>
+        <p class="feature-desc" data-fr="Gérant, caissier, gestionnaire de stock — chacun avec ses propres permissions." data-ht="Jeran, kesyè, Jesyon stòk — chak youn ak pwòp pèmisyon li.">Gérant, caissier, gestionnaire de stock — chacun avec ses propres permissions.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="eyebrow" data-fr="Tarifs" data-ht="Pri yo">Tarifs</div>
+      <h2 class="display-sm" data-fr="Un plan pour chaque commerce" data-ht="Yon plan pou chak biznis">Un plan pour chaque commerce</h2>
+      <p data-fr="Commencez gratuitement. Passez au Premium quand vous êtes prêt." data-ht="Kòmanse gratis. Pase nan Premium lè ou pare.">Commencez gratuitement. Passez au Premium quand vous êtes prêt.</p>
+    </div>
+    <div class="price-grid">
+      <!-- Free -->
+      <div class="price-card fade-in">
+        <div class="price-label" data-fr="Essai gratuit" data-ht="Esè gratis">Essai gratuit</div>
+        <div class="price-amount" data-fr="0 HTG" data-ht="0 HTG">0 HTG</div>
+        <div class="price-period" data-fr="7 jours pour explorer" data-ht="7 jou pou eksplore">7 jours pour explorer</div>
+        <div class="price-divider"></div>
+        <div class="price-feature yes"><span class="check">✓</span> <span data-fr="10 factures" data-ht="10 fakti">10 factures</span></div>
+        <div class="price-feature yes"><span class="check">✓</span> <span data-fr="20 clients" data-ht="20 kliyan">20 clients</span></div>
+        <div class="price-feature yes"><span class="check">✓</span> <span data-fr="Gestion de stock" data-ht="Jesyon stòk">Gestion de stock</span></div>
+        <div class="price-feature yes"><span class="check">✓</span> <span data-fr="Explorer toutes les fonctions" data-ht="Eksplore tout fonksyon yo">Explorer toutes les fonctions</span></div>
+        <div class="price-feature"><span class="check" style="opacity:.3">✗</span> <span data-fr="Factures illimitées" data-ht="Fakti ilimite">Factures illimitées</span></div>
+        <div class="price-feature"><span class="check" style="opacity:.3">✗</span> <span data-fr="Rapports PDF" data-ht="Rapò PDF">Rapports PDF</span></div>
+        <a href="#contact" class="price-cta price-cta-outline" data-fr="Commencer gratuitement" data-ht="Kòmanse gratis">Commencer gratuitement</a>
+      </div>
+      <!-- Premium -->
+      <div class="price-card featured fade-in">
+        <div class="price-popular-badge" data-fr="⭐ Populaire" data-ht="⭐ Popilè">⭐ Populaire</div>
+        <div class="price-label" style="color:var(--gold)">💎 Premium</div>
+        <div class="price-amount">1 750 <span style="font-size:18px">HTG</span></div>
+        <div class="price-period" data-fr="par mois • 1 à 3 utilisateurs" data-ht="pa mwa • 1 a 3 itilizatè">par mois • 1 à 3 utilisateurs</div>
+        <div class="price-divider"></div>
+        <div class="price-feature yes"><span class="check">✓</span> <span data-fr="Factures & clients illimités" data-ht="Fakti & kliyan ilimite">Factures & clients illimités</span></div>
+        <div class="price-feature yes"><span class="check">✓</span> <span data-fr="Gestion de stock + alertes" data-ht="Jesyon stòk + alèt">Gestion de stock + alertes</span></div>
+        <div class="price-feature yes"><span class="check">✓</span> <span data-fr="Module Dépenses" data-ht="Modil Depans">Module Dépenses</span></div>
+        <div class="price-feature yes"><span class="check">✓</span> <span data-fr="Rapports & Graphiques PDF" data-ht="Rapò & Grafik PDF">Rapports & Graphiques PDF</span></div>
+        <div class="price-feature yes"><span class="check">✓</span> <span data-fr="Export WhatsApp" data-ht="Ekspòte WhatsApp">Export WhatsApp</span></div>
+        <div class="price-feature yes"><span class="check">✓</span> <span data-fr="Jusqu'à 3 utilisateurs" data-ht="Jiska 3 itilizatè">Jusqu'à 3 utilisateurs</span></div>
+        <div class="price-feature"><span class="check" style="opacity:.3">✗</span> <span data-fr="Retours & Remboursements" data-ht="Retou & Ranbousman">Retours & Remboursements</span></div>
+        <div class="price-feature"><span class="check" style="opacity:.3">✗</span> <span data-fr="Gestion des rôles" data-ht="Jesyon wòl">Gestion des rôles</span></div>
+        <a href="#contact" class="price-cta price-cta-gold" data-fr="Choisir Premium" data-ht="Chwazi Premium">Choisir Premium</a>
+      </div>
+      <!-- Premium Plus -->
+      <div class="price-card popular fade-in">
+        <div class="price-label" style="color:#FCD34D">🚀 Premium Plus</div>
+        <div class="price-amount">2 250 <span style="font-size:18px">HTG</span></div>
+        <div class="price-period" data-fr="par mois • Utilisateurs illimités" data-ht="pa mwa • Itilizatè ilimite">par mois • Utilisateurs illimités</div>
+        <div class="price-divider"></div>
+        <div class="price-feature yes"><span class="check">✓</span> <span data-fr="Tout ce qui est dans Premium" data-ht="Tout sa ki nan Premium">Tout ce qui est dans Premium</span></div>
+        <div class="price-feature yes"><span class="check">✓</span> <span data-fr="Retours & Remboursements" data-ht="Retou & Ranbousman">Retours & Remboursements</span></div>
+        <div class="price-feature yes"><span class="check">✓</span> <span data-fr="Utilisateurs illimités" data-ht="Itilizatè ilimite">Utilisateurs illimités</span></div>
+        <div class="price-feature yes"><span class="check">✓</span> <span data-fr="Gestion des rôles & permissions" data-ht="Jesyon wòl & pèmisyon">Gestion des rôles & permissions</span></div>
+        <div class="price-feature yes"><span class="check">✓</span> <span data-fr="Journal d'activité" data-ht="Jounal aktivite">Journal d'activité</span></div>
+        <div class="price-feature yes"><span class="check">✓</span> <span data-fr="Rapports avancés" data-ht="Rapò avanse">Rapports avancés</span></div>
+        <div class="price-feature yes"><span class="check">✓</span> <span data-fr="Support prioritaire" data-ht="Sipò priyoritè">Support prioritaire</span></div>
+        <a href="#contact" class="price-cta price-cta-blue" data-fr="Choisir Premium Plus" data-ht="Chwazi Premium Plus">Choisir Premium Plus</a>
+      </div>
+    </div>
+    <p style="text-align:center;margin-top:28px;font-size:13px;color:var(--muted);" data-fr="Paiement par MonCash ou Natcash · Activation sous 24h ouvrables" data-ht="Pèman pa MonCash oswa Natcash · Aktivasyon anba 24h travay">Paiement par MonCash ou Natcash · Activation sous 24h ouvrables</p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="eyebrow" data-fr="Témoignages" data-ht="Temwayaj">Témoignages</div>
+      <h2 class="display-sm" data-fr="Ce que disent nos commerçants" data-ht="Sa komèsan nou yo di">Ce que disent nos commerçants</h2>
+    </div>
+    <div class="grid-3">
+      <div class="testi-card fade-in">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text" data-fr='"Avant, je perdais des heures à faire mes comptes. Maintenant avec Konta Mobil, je sais exactement mon profit chaque soir en 2 minutes."' data-ht='"Anvan, mwen te pèdi èdtan ap fè kont mwen. Kounye a avèk Konta Mobil, mwen konnen egzakteman pwofi mwen chak swa nan 2 minit."'>"Avant, je perdais des heures à faire mes comptes. Maintenant avec Konta Mobil, je sais exactement mon profit chaque soir en 2 minutes."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">🛒</div>
+          <div>
+            <div class="testi-name">Marie-Carline Pierre</div>
+            <div class="testi-role" data-fr="Auto-Parts — Pétion-Ville" data-ht="Otopats — Petyonvil">Auto-Parts — Pétion-Ville</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card fade-in">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text" data-fr='"J\'ai 3 employés et grâce au Premium Plus, chacun a ses propres accès. Mon caissier voit seulement les ventes, moi je vois tout."' data-ht='"Mwen gen 3 anplwaye e gras ak Premium Plus, chak youn gen pwòp aksè li. Kesyè mwen wè sèlman vant yo, mwen menm mwen wè tout."'>"J'ai 3 employés et grâce au Premium Plus, chacun a ses propres accès. Mon caissier voit seulement les ventes, moi je vois tout."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">👔</div>
+          <div>
+            <div class="testi-name">Jean-Robert Étienne</div>
+            <div class="testi-role" data-fr="Pharmacie — Delmas" data-ht="Famasi — Delma">Pharmacie — Delmas</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card fade-in">
+        <div class="testi-stars">★★★★★</div>
+        <p class="testi-text" data-fr='"Le module retours a changé ma vie. Avant je perdais tout quand un client ramenait un article. Maintenant ça se fait automatiquement."' data-ht='"Modil retou a chanje lavi mwen. Anvan mwen te pèdi tout lè yon kliyan retounen yon atik. Kounye a sa fèt otomatikman."'>"Le module retours a changé ma vie. Avant je perdais tout quand un client ramenait un article. Maintenant ça se fait automatiquement."</p>
+        <div class="testi-author">
+          <div class="testi-avatar">💊</div>
+          <div>
+            <div class="testi-name">Nadège Innocent</div>
+            <div class="testi-role" data-fr="Quincaillerie — Cap-Haïtien" data-ht="Kenkayri — Okap">Quincaillerie — Cap-Haïtien</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container" style="max-width:720px;">
+    <div class="section-header fade-in">
+      <div class="eyebrow">FAQ</div>
+      <h2 class="display-sm" data-fr="Questions fréquentes" data-ht="Kesyon yo poze souvan">Questions fréquentes</h2>
+    </div>
+    <div class="fade-in">
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-fr="Comment fonctionne l'essai gratuit de 7 jours ?" data-ht="Kijan esè gratis 7 jou a fonksyone ?">Comment fonctionne l'essai gratuit de 7 jours ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p data-fr="Créez votre compte et explorez toutes les fonctionnalités pendant 7 jours sans payer. Vous êtes limité à 10 factures et 20 clients. Passez au Premium à tout moment pour continuer sans limite." data-ht="Kreye kont ou epi eksplore tout fonksyon yo pandan 7 jou san peye. Ou limite a 10 fakti ak 20 kliyan. Pase nan Premium nenpòt ki lè pou kontinye san limit.">Créez votre compte et explorez toutes les fonctionnalités pendant 7 jours sans payer. Vous êtes limité à 10 factures et 20 clients. Passez au Premium à tout moment pour continuer sans limite.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-fr="Comment payer mon abonnement ?" data-ht="Kijan pou mwen peye abònman mwen ?">Comment payer mon abonnement ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p data-fr="Nous acceptons MonCash et Natcash. Envoyez votre paiement, uploadez le screenshot comme preuve, et votre compte est activé dans les 24 heures ouvrables." data-ht="Nou aksepte MonCash ak Natcash. Voye pèman ou, telechaje screenshot kòm prèv, epi kont ou aktive nan 24 è travay.">Nous acceptons MonCash et Natcash. Envoyez votre paiement, uploadez le screenshot comme preuve, et votre compte est activé dans les 24 heures ouvrables.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-fr="Puis-je gérer plusieurs employés ?" data-ht="Eske'm kapab jere plizyè anpwlaye ?">Puis-je gérer plusieurs employés ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p data-fr="Oui. Avec le forfait Premium Plus, vous pouvez créer plusieurs comptes employés, attribuer des rôles et définir des permissions selon les responsabilités de chaque membre de votre équipe. Vous pouvez également suivre leurs activités afin de mieux contrôler votre entreprise." data-ht="Wi, avèk plan Premium Plus la ou ka kreye plizyè kont anplwaye, bay yo chak wòl pa yo ak pèmisyon selon responsabilite  chak manm nan ekip ou. Ou kapab swiv aktivite yo sa ki pèmèt ou pi byen kontwole biznis ou.">Oui. Avec le forfait Premium Plus, vous pouvez créer plusieurs comptes employés, attribuer des rôles et définir des permissions selon les responsabilités de chaque membre de votre équipe. Vous pouvez également suivre leurs activités afin de mieux contrôler votre entreprise.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-fr="Quelle est la différence entre Premium et Premium Plus ?" data-ht="Ki diferans ant Premium ak Premium Plus ?">Quelle est la différence entre Premium et Premium Plus ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p data-fr="Premium (1 750 HTG) est parfait pour 1 à 3 utilisateurs avec factures illimitées, stock, dépenses et rapports. Premium Plus (2 250 HTG) ajoute les retours & remboursements, utilisateurs illimités, gestion des rôles et journal d'activité." data-ht="Premium (1 750 HTG) bon pou 1 a 3 itilizatè ak fakti ilimite, stòk, depans ak rapò. Premium Plus (2 250 HTG) ajoute retou & ranbousman, itilizatè ilimite, Jesyon wòl ak jounal aktivite.">Premium (1 750 HTG) est parfait pour 1 à 3 utilisateurs avec factures illimitées, stock, dépenses et rapports. Premium Plus (2 250 HTG) ajoute les retours & remboursements, utilisateurs illimités, gestion des rôles et journal d'activité.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-fr="Mes données sont-elles sauvegardées ?" data-ht="Èske done mwen yo anrejistre ?">Mes données sont-elles sauvegardées ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p data-fr="Oui. Toutes vos données sont synchronisées automatiquement dans le cloud (Supabase) et accessibles depuis n'importe quel appareil avec votre compte." data-ht="Wi. Tout done ou yo senkwonize otomatikman sou yon sèvè a distans epi aksesib depi nenpòt aparèy avèk kont ou.">Oui. Toutes vos données sont synchronisées automatiquement dans le cloud (Supabase) et accessibles depuis n'importe quel appareil avec votre compte.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-fr="L'app fonctionne-t-elle sans internet ?" data-ht="Èske aplikasyon an travay san entènèt ?">L'app fonctionne-t-elle sans internet ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p data-fr="Konta Mobil fonctionne en mode hors ligne pour les ventes de base. La synchronisation avec le cloud se fait automatiquement dès que vous retrouvez une connexion." data-ht="Konta Mobil travay nan mòd òfliy pou vant debaz yo. Senkwonizasyon ak sèvè a fèt otomatikman depi ou jwenn koneksyon ankò.">Konta Mobil fonctionne en mode hors ligne pour les ventes de base. La synchronisation avec le cloud se fait automatiquement dès que vous retrouvez une connexion.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-fr="Puis-je gérer mon stock ?" data-ht="Eske'm kapab jere stòk mwen?">Puis-je gérer mon stock?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p data-fr="Oui. Konta Mobil vous permet d'ajouter vos produits, de suivre les entrées et les sorties de stock et de consulter les quantités disponibles en temps réel. Vous pouvez également recevoir des alertes lorsqu'un produit atteint un niveau de stock faible afin d'éviter les ruptures." data-ht="Wi. Konta Mobil pèmèt ou ajoute pwodui, swiv antre ak sòti stòk epi konsilte kantite ki disponib an tan reyèl. Ou kapab tou resevwa yon alèt lè yon pwodui atenn yon nivo stòk ki fèb, sa ki pèmèt ou evite stòk ou fini san'w pa konnen.">Oui. Konta Mobil vous permet d'ajouter vos produits, de suivre les entrées et les sorties de stock et de consulter les quantités disponibles en temps réel. Vous pouvez également recevoir des alertes lorsqu'un produit atteint un niveau de stock faible afin d'éviter les ruptures.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-fr="Puis-je suivre mes bénéfices ?" data-ht="Èske'm kapab swiv benefis mwen ?">Puis-je suivre mes bénéfices ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p data-fr="Oui. Konta Mobil vous aide à suivre vos bénéfices à partir de vos ventes et de vos dépenses enregistrées. Le tableau de bord et les rapports vous permettent de consulter votre chiffre d'affaires, vos dépenses, vos bénéfices et l'évolution de vos performances afin de prendre de meilleures décisions." data-ht="Wi. Konta Mobil ka ede'w swiv benefis ou apati vant ak depans ou yo ki anrejistre.  Tablo de bò a ak rapò yo pèmèt ou konsilte chif dafè, depans, benefis ak evolisyon pèfòmans ou yo, sa ki pèmèt ou ka pran meyè desizyon pou biznis ou.">Oui. Konta Mobil vous aide à suivre vos bénéfices à partir de vos ventes et de vos dépenses enregistrées. Le tableau de bord et les rapports vous permettent de consulter votre chiffre d'affaires, vos dépenses, vos bénéfices et l'évolution de vos performances afin de prendre de meilleures décisions.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          <span data-fr="Comment puis-je contacter le support ?" data-ht="Kòman'm ka kontakte sipò Konta Mobil lan ?">Comment puis-je contacter le support ?</span>
+          <span class="faq-icon">+</span>
+        </button>
+        <div class="faq-a">
+          <p data-fr="Vous pouvez contacter l'équipe Konta Mobil directement sur WhatsApp au +509 4339 2682 / +509 3812 6770 ou par email à informatiqueallinone@gmail.com. Pour obtenir une réponse plus rapide, indiquez votre nom, le nom de votre entreprise et décrivez clairement votre demande." data-ht="Ou kapab kontakte sipò Konta Mobil la dirèkteman sou Whatsapp nan +509 4339 2682 / +509 3812 6770 oubyen pa imel nan informatiqueallinone@gmail.com.  Pou ka jwenn yon repons pi rapid di non'w, non biznis ou a epi dekri klè demann ou an.">Vous pouvez contacter l'équipe Konta Mobil directement sur WhatsApp au +509 4339 2682 / +509 3812 6770 ou par email à informatiqueallinone@gmail.com. Pour obtenir une réponse plus rapide, indiquez votre nom, le nom de votre entreprise et décrivez clairement votre demande.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="eyebrow" data-fr="Contact" data-ht="Kontakte">Contact</div>
+      <h2 class="display-sm" data-fr="Parlons de votre commerce" data-ht="Ann pale de biznis ou">Parlons de votre commerce</h2>
+      <p data-fr="Une question ? Envoyez-nous un message et nous vous répondons sous 24h." data-ht="Yon kesyon ? Voye nou yon mesaj epi nou reponn ou anba 24h.">Une question ? Envoyez-nous un message et nous vous répondons sous 24h.</p>
+    </div>
+    <div class="contact-inner fade-in">
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">📱</div>
+          <div>
+            <div class="contact-item-text" data-fr="WhatsApp Support" data-ht="WhatsApp Sipò">WhatsApp Support</div>
+            <div class="contact-item-val">+509 4339-2682 / +509 3812 6770</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📧</div>
+          <div>
+            <div class="contact-item-text" data-fr="Email" data-ht="Imèl">Email</div>
+            <div class="contact-item-val">informatiqueallinone@gmail.com</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">🕐</div>
+          <div>
+            <div class="contact-item-text" data-fr="Heures d'ouverture" data-ht="Orè travay">Heures d'ouverture</div>
+            <div class="contact-item-val" data-fr="Lun–Sam, 8h–18h" data-ht="Lendi–Samdi, 8h–18h">Lun–Sam, 8h–18h</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">📍</div>
+          <div>
+            <div class="contact-item-text" data-fr="Localisation" data-ht="Lokalizasyon">Localisation</div>
+            <div class="contact-item-val">Port-au-Prince, Haïti</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="form-group">
+          <label class="form-label" data-fr="Nom complet" data-ht="Non konplè">Nom complet</label>
+          <input id="contact-name" type="text" class="form-input" placeholder="Marie Pierre" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" data-fr="Téléphone (WhatsApp)" data-ht="Telefòn (WhatsApp)">Téléphone (WhatsApp)</label>
+          <input id="contact-phone" type="tel" class="form-input" placeholder="+509 XXXX-XXXX" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" data-fr="Email" data-ht="Imèl">Email</label>
+          <input id="contact-email"  type="email" class="form-input" placeholder="marie@exemple.com" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" data-fr="Message" data-ht="Mesaj">Message</label>
+          <textarea id="contact-message" class="form-input" placeholder="Dites-nous comment nous pouvons vous aider..."></textarea>
+        </div>
+         <div id="contact-error" style="display:none;color:#EF4444;font-size:13px;margin-bottom:12px;padding:10px;background:#EF444415;border-radius:8px"></div>
+        <button class="btn btn-gold" style="width:100%;justify-content:center;" onclick="submitForm(this)">
+          <span data-fr="Envoyer le message" data-ht="Voye mesaj la">Envoyer le message</span> →
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="nav-logo">
+          <div class="nav-logo-icon"><img src="images/Logo_Konta.png" class ="logo" alt="Logo_Konta_Mobil"></div>
+          <span class="nav-logo-text">KONTA MOBIL</span>
+        </div>
+        <p data-fr="Application mobile de gestion commerciale pour les PME haïtiennes. Factures, stock, dépenses et rapports en un seul endroit." data-ht="Aplikasyon mobil Jesyon komèsyal pou PME ayisyèn. Fakti, stòk, depans ak rapò nan yon sèl kote.">Application mobile de gestion commerciale pour les PME haïtiennes. Factures, stock, dépenses et rapports en un seul endroit.</p>
+        <div class="social-links" style="margin-top:16px;">
+          <a href="#" class="social-link" title="Facebook">📘</a>
+          <a href="#" class="social-link" title="WhatsApp">💬</a>
+          <a href="#" class="social-link" title="Instagram">📸</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 data-fr="Produit" data-ht="Pwodui">Produit</h4>
+        <a href="#features" data-fr="Fonctionnalités" data-ht="Fonksyon yo">Fonctionnalités</a>
+        <a href="#pricing" data-fr="Tarifs" data-ht="Pri yo">Tarifs</a>
+        <a href="#faq" data-fr="FAQ" data-ht="FAQ">FAQ</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-fr="Support" data-ht="Sipò">Support</h4>
+        <a href="#contact" data-fr="Nous contacter" data-ht="Kontakte nou">Nous contacter</a>
+        <a href="https://wa.me/50943392682" data-fr="WhatsApp" data-ht="WhatsApp">WhatsApp</a>
+        <a href="mailto:support@kontamobil.com" data-fr="Email" data-ht="Imèl">Email</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-fr="Légal" data-ht="Legal">Légal</h4>
+        <a href="#" data-fr="Conditions d'utilisation" data-ht="Kondisyon itilizasyon">Conditions d'utilisation</a>
+        <a href="#" data-fr="Confidentialité" data-ht="Konfidansyalite">Confidentialité</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p data-fr="© 2026 Konta Mobil. Tous droits réservés." data-ht="© 2026 Konta Mobil. Tout dwa rezève.">© 2026 Konta Mobil. Tous droits réservés.</p>
+      <p style="color:var(--muted);font-size:11px;" data-fr="kontamobil.ht" data-ht="kontamobil.ht">kontamobil.ht</p>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp Float -->
+<a href="https://wa.me/50943392682?text=Bonjour%2C%20je%20veux%20en%20savoir%20plus%20sur%20Konta%20Mobil" class="wa-float" title="WhatsApp" target="_blank">💬</a>
+<script src="script.js"></script>
+</body>
+</html>
